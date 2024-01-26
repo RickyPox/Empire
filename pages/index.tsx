@@ -11,7 +11,9 @@ export default function Home() {
       <section>
         <Navbar></Navbar>
       </section>
-   
+      <section className="lg:px-[50px]">
+      <LandingPage></LandingPage>
+      </section>
     </div>
   );
 }

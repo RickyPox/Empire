@@ -30,20 +30,17 @@ export default function Navbar() {
     const handleMenuOpen = () => {
         setIsMenuOpen(!isMenuOpen)
     }
-
-
     return (
         <div className={`${isMenuOpen ? "pt-0": "pt-[100px]"} lg:pt-[100px]`}>
-            <div className="grid lg:grid-cols-9 grid-cols-4 items-center justify-items-center lg:justify-items-stretch gap-x-[20px] px-[20px] lg:px-[40px]">
-                <div className="lg:col-start-2 lg:col-span-2">
+            <div className="flex lg:justify-evenly justify-between items-center px-[30px] lg:px-0">
+                <div>
                     <img src="/Logo.png" alt="Logo" />
                 </div>
                 <div onClick={handleMenuOpen} className="lg:hidden col-start-4">
                     <img src="/Menu.png"></img>
                 </div>
-                <div className="col-span-4 grid-cols-4 gap-x-[20px] lg:grid hidden">
                     {navigation.map((item, index) => (
-                        <div className={`navbarItem`} key={index}>
+                        <div className={`navbarItem lg:block hidden`} key={index}>
                             {item.disabled ? (
                                 <div className="flex">
                                     <div className="flex items-center justify-center relative">
@@ -65,11 +62,10 @@ export default function Navbar() {
                             )}
                         </div>
                     ))}
-                </div> 
             </div>
 
             {/* MOBILE MENU */}
-            <div className="lg:hidden block">
+            <div className="lg:hidden fixed z-20">
             <div onClick={handleMenuOpen} className={`${isMenuOpen ? "flex":"hidden"} z-10 fixed  w-screen justify-end px-[50px]`}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L18.5 18.5" stroke="#FDFDFD" stroke-width="2"/>
