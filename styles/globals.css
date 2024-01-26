@@ -2,32 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+@font-face {
+  font-family: Thunder;
+  src: 
+  url("/fonts/Thunder-MediumLC.ttf") format("truetype");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: Giaza;
+  src: 
+  url("/fonts/Giaza-Stencil.ttf") format("truetype");
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body{
+  background-color: #050505;
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1{
+  font-family: "Giaza", sans-serif;
+  font-size: 368px;
+  color:#AEFD38;
+}
+
+h3{
+  color: #FDFDFD;
+  font-family: "Thunder", sans-serif;
+  font-size: 30px;
+}
+
+p{
+  color: #FDFDFD;
+  font-family: "Thunder", sans-serif;
+  font-size: 26px;
+}
+
+.empire{
+  filter: drop-shadow(0px 0px 60px #AEFD38);
+}
+
+.navbarItem:hover{
+  filter: drop-shadow(0px 0px 20px #AEFD38);
 }
