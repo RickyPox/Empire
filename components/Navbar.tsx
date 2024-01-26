@@ -31,10 +31,10 @@ export default function Navbar() {
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <div className={`${isMenuOpen ? "pt-0": "pt-[30px]"} lg:pt-[100px]`}>
-            <div className="flex lg:justify-evenly justify-between items-center px-[30px] lg:px-0">
+        <div className={`${isMenuOpen ? "pt-[30px]": "pt-[0px]"}`}>
+            <div className="flex lg:justify-evenly justify-between items-center px-[30px] lg:px-0 absolute w-screen h-[150px]">
                 <div>
-                    <img src="/Logo.png" alt="Logo" />
+                    <img className="lg:w-auto w-[28px]" src="/Logo.png" alt="Logo" />
                 </div>
                 <div onClick={handleMenuOpen} className="lg:hidden col-start-4">
                     <img src="/Menu.png"></img>
