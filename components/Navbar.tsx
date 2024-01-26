@@ -31,7 +31,7 @@ export default function Navbar() {
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <div className={`${isMenuOpen ? "pt-0": "pt-[100px]"} lg:pt-[100px]`}>
+        <div className={`${isMenuOpen ? "pt-0": "pt-[30px]"} lg:pt-[100px]`}>
             <div className="flex lg:justify-evenly justify-between items-center px-[30px] lg:px-0">
                 <div>
                     <img src="/Logo.png" alt="Logo" />
