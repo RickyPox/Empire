@@ -6,7 +6,7 @@ import Head from "next/head";
 
 export default function Home() {
   return (
-    <div>
+    <div className="max-w-[1920px]">
       <Head><title>Empire</title></Head>
       <section>
         <Navbar></Navbar>

@@ -6,17 +6,17 @@ export default function Navbar() {
         {
             name: "DAO",
             href: "#",
-            disabled: false 
+            disabled: true 
         },
         {
             name: "SYNDICATE",
             href: "#",
-            disabled: false 
+            disabled: true 
         },
         {
             name: "STUDIO",
             href: "#",
-            disabled: false 
+            disabled: true 
         },
         {
             name: "IP",

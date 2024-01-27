@@ -44,11 +44,10 @@ p{
   font-size: 14px;
 }
 
-.empire{
-  filter: drop-shadow(0px 0px 60px #AEFD38);
+.empireGlow .textGlow{
+  filter: blur(30px);
 }
-
-.empire > :last-child{
+ .empireGlow > :last-child{
   transform: rotatex(180deg) translatey(60%); 
   filter: blur(5px);
 
