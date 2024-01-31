@@ -5,18 +5,18 @@ export default function Navbar() {
     const navigation = [
         {
             name: "DAO",
-            href: "#",
-            disabled: true 
+            href: "/dao",
+            disabled: false 
         },
         {
             name: "SYNDICATE",
-            href: "#",
-            disabled: true 
+            href: "/syndicate",
+            disabled: false 
         },
         {
             name: "STUDIO",
-            href: "#",
-            disabled: true 
+            href: "/studio",
+            disabled: false 
         },
         {
             name: "IP",
@@ -31,10 +31,10 @@ export default function Navbar() {
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <div className={`${isMenuOpen ? "pt-[30px]": "pt-[0px]"}`}>
-            <div className="flex lg:justify-evenly justify-between items-center px-[30px] lg:px-0 absolute w-screen h-[150px]">
+        <div className={`${isMenuOpen ? "pt-[30px]": "pt-[0px]"} z-20`}>
+            <div className="flex lg:justify-evenly justify-between items-center px-[30px] lg:px-0  max-w-[1920px] w-screen lg:h-[150px] h-[50px] z-20">
                 <div>
-                    <img className="lg:w-auto w-[28px]" src="/Logo.png" alt="Logo" />
+                <Link href="/"><img className="lg:w-auto w-[28px]" src="/Logo.png" alt="Logo" /></Link>
                 </div>
                 <div onClick={handleMenuOpen} className="lg:hidden col-start-4">
                     <img src="/Menu.png"></img>

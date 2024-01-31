@@ -10,6 +10,13 @@
 }
 
 @font-face {
+  font-family: Thunder-Bold;
+  src: 
+  url("/fonts/Thunder-BoldLC.ttf") format("truetype");
+}
+
+
+@font-face {
   font-family: Giaza;
   src: 
   url("/fonts/Giaza-Stencil.ttf") format("truetype");
@@ -22,7 +29,7 @@
 }
 
 body{
-  background-color: #050505;
+  background-color: #050505!important;
   overflow-x: hidden;
 }
 
@@ -44,6 +51,11 @@ p{
   font-size: 14px;
 }
 
+.glow{
+  filter: drop-shadow(0px 0px 20px #AEFD38);
+  color:#AEFD38;
+}
+
 .empireGlow .textGlow{
   filter: blur(30px);
 }
@@ -55,6 +67,29 @@ p{
 
 .navbarItem:hover{
   filter: drop-shadow(0px 0px 20px #AEFD38);
+}
+
+.chakra-input:focus, .chakra-textarea:focus{
+  outline:none!important;
+  border: none!important;
+  box-shadow: none!important;
+}
+.chakra-input, .chakra-textarea{
+  color: white;
+  border: none!important;
+  font-family: "Cardo", serif;
+}
+
+.chakra-button{
+  background:none!important;
+}
+
+.css-1fc7edv{
+  border-bottom-color:#AEFD38!important;
+  border-left-color:#AEFD38!important;
+  width:20px!important;
+  height:20px!important;
+  border-width: 5px!important;
 }
 
 @media (min-width: 768px){

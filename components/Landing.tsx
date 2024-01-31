@@ -36,7 +36,7 @@ export default function LandingPage (){
             initial={{opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
-            className="flex justify-center items-center w-screen h-screen ">
+            className="flex justify-center items-center w-screen lg:mt-0 mt-[150px]">
                 <div>
                     <div className="flex justify-between md:translate-y-[100%]">
                     <p>1/1s.
