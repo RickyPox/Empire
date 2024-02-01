@@ -5,7 +5,7 @@ const CONTACT_MESSAGE_FIELDS = {
     subject: "Form Type",
     twitter: "Twitter Contact",
     discord: "Discord Contact",
-    description: "Description",
+    request: "Art Request",
     deadline: "Deadline",
     
 };

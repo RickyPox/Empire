@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import {sendContactForm} from "../lib/apiStudio"
 
 
-const initValues = {subject: "Studio Form", twitter: "", discord:"", description: "", }
+const initValues = {subject: "Studio Form", twitter: "", discord:"", request: "", }
 
 const initState = {values:initValues}
 
@@ -123,16 +123,16 @@ export default function DaoForm(){
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M16.3693 19L2.62906e-08 2.63065L2.63065 0L19 16.3693L16.3693 19Z" fill="#FDFDFD"/>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M19 2.63065L2.63065 19L0 16.3693L16.3693 5.82733e-07L19 2.63065Z" fill="#FDFDFD"/>
                         </svg>
-                            <h3 className="uppercase mt-[5px]">description</h3>
+                            <h3 className="uppercase mt-[5px]">Art Request</h3>
                     </div>
-                    <FormControl  isInvalid={touched.description && !values.description}>
+                    <FormControl  isInvalid={touched.request && !values.request}>
                     <Textarea 
                         className="w-full pl-[20px] bg-transparent lg:text-left text-center" 
-                        name="description"
-                        value={values.description}
+                        name="request"
+                        value={values.request}
                         onChange = {handleChange}
                         onBlur = {onBlur}
-                        placeholder="A brief information about yourself"
+                        placeholder="Your Art Request Description"
                         rows={5}/>
                         <FormErrorMessage>Required</FormErrorMessage>
                     </FormControl>
@@ -140,7 +140,7 @@ export default function DaoForm(){
             </div>
             <div className="flex justify-center w-full lg:grid lg:grid-cols-9 ">
                 <Button
-                    isDisabled={!values.twitter || !values.discord || !values.description || !values.deadline}
+                    isDisabled={!values.twitter || !values.discord || !values.request || !values.deadline}
                     onClick={onSubmit}
                     isLoading={isLoading}
                     className="uppercase mt-[40px] lg:mb-[60px] lg:col-span-5 lg:col-start-3 w-full ">
