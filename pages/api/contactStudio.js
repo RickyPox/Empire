@@ -35,7 +35,7 @@ const handler = async (req, res) => {
 
     if(req.method === "POST"){
         const data = req.body;
-        if (!data.twitter || !data.discord || !data.description){
+        if (!data.twitter || !data.discord || !data.request || !data.deadline){
             res.status(400).json({message: "Bad request"});
         }
         try{
