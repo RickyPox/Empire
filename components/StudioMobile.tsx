@@ -127,10 +127,12 @@ export default function StudioDesktop() {
                     {item.type === "video" ? (
                         <video
                             ref={el => videosRef.current[index] = el}
-                            src={item.src}
                             className="w-[260px] h-[260px] p-[20px]"
+                            playsInline 
                             style={index === hoveredIndex ? hoverStyles : defaultStyles}
-                        ></video>
+                        >
+                            <source src={item.src}></source>
+                        </video>
                     ) : (
                         <img
                             className="w-[260px] h-[260px] p-[20px]"

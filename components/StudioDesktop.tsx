@@ -104,7 +104,9 @@ export default function StudioDesktop() {
                                 onMouseLeave={() => handleMouseLeave(index)}
                             >
                                 {item.type === "video" ? (
-                                    <video src={item.src} className="w-[260px] h-[260px]" ref={(el) => (videoRefs.current[index] = el)}></video>
+                                    <video className="w-[260px] h-[260px]" playsInline ref={(el) => (videoRefs.current[index] = el)}>
+                                        <source src={item.src}></source>
+                                    </video>
                                 ) : (
                                     <img className="w-[260px] h-[260px]" src={item.src} alt={`Media ${index + 1}`} />
                                 )}
