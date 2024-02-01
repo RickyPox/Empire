@@ -106,7 +106,6 @@ export default function StudioDesktop() {
                                 {item.type === "video" ? (
                                     <video className="w-[260px] h-[260px]" 
                                     playsInline 
-                                    preload="auto"
                                     ref={(el) => (videoRefs.current[index] = el)}>
                                         <source src={item.src}></source>
                                     </video>

@@ -129,7 +129,6 @@ export default function StudioDesktop() {
                             ref={el => videosRef.current[index] = el}
                             className="w-[260px] h-[260px] p-[20px]"
                             playsInline 
-                            preload="auto"
                             style={index === hoveredIndex ? hoverStyles : defaultStyles}
                         >
                             <source src={item.src}></source>
