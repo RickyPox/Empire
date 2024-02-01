@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import StudioDesktop from "@/components/StudioDesktop";
 import StudioMobile from "@/components/StudioMobile";
+import StudioForm from "@/components/StudioForm";
 import Head from "next/head";
 
 export default function Studio() {
@@ -18,6 +19,9 @@ export default function Studio() {
                         <h3 className="uppercase glow text-[120px] font-[Thunder-Bold] block lg:hidden text-center">Find <span className="block -mt-[30%]">Your</span><span className="block -mt-[30%]">Artist</span></h3>
                     </div>
                 </section>
+                <section>
+                        <StudioForm></StudioForm>
+                    </section>
                 <section className="hidden lg:block mb-[100px]">
                     <StudioDesktop></StudioDesktop>
                 </section>

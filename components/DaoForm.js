@@ -60,7 +60,7 @@ export default function DaoForm(){
                 {error && (
                     <Text color="red.300">{error}</Text>
                 )}
-            <div className="flex lg:flex-row flex-col justify-center lg:gap-[11%] gap-[30px] w-1/2 lg:w-full ">
+            <div className="flex lg:flex-row flex-col justify-center lg:gap-[11%] gap-[50px] w-1/2 lg:w-full ">
                 <div className="flex flex-col xl:w-[22%] ">
                     <div className="flex lg:flex-row flex-col items-center gap-[10px]">
                         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +120,7 @@ export default function DaoForm(){
                     isDisabled={!values.twitter || !values.discord || !values.description}
                     onClick={onSubmit}
                     isLoading={isLoading}
-                    className="text-white uppercase flex items-center justify-center mt-[50px] lg:w-[33%] w-full">
+                    className=" uppercase flex items-center justify-center mt-[40px] lg:w-[33%] w-full">
                         <h3 className="py-[20px] border-[1px] border-white w-full">Submit</h3>
                 </Button>
             </div>

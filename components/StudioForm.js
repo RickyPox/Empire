@@ -1,14 +1,14 @@
 import { Button, FormControl, FormLabel, Input, Textarea, FormErrorMessage, Text, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 import { ChakraProvider } from '@chakra-ui/react'
-import {sendContactForm} from "../lib/api"
+import {sendContactForm} from "../lib/apiStudio"
 
 
-const initValues = {subject: "Syndicate Form", twitter: "", discord:"", description: "", }
+const initValues = {subject: "Studio Form", twitter: "", discord:"", description: "", }
 
 const initState = {values:initValues}
 
-export default function SyndicateForm(){
+export default function DaoForm(){
 
     const toast = useToast()
     const [state, setState] = useState(initState)
@@ -55,13 +55,13 @@ export default function SyndicateForm(){
 
     return(
     <div className="w-full max-w-[1920px] px-[20px] lg:px-0">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center w-full">
             <ChakraProvider >
                 {error && (
                     <Text color="red.300">{error}</Text>
                 )}
-            <div className="flex lg:flex-row flex-col justify-center lg:gap-[11%] gap-[50px] w-1/2 lg:w-full ">
-                <div className="flex flex-col xl:w-[22%] ">
+            <div className="flex lg:grid lg:grid-cols-8 flex-col justify-center lg:gap-[20px] gap-[50px] w-1/2 lg:w-full ">
+                <div className="flex flex-col lg:col-start-2 lg:col-span-2">
                     <div className="flex lg:flex-row flex-col items-center gap-[10px]">
                         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M16.3693 19L2.62906e-08 2.63065L2.63065 0L19 16.3693L16.3693 19Z" fill="#FDFDFD"/>
@@ -69,6 +69,8 @@ export default function SyndicateForm(){
                         </svg>
                             <h3 className="uppercase mt-[5px]">Contact Info</h3>
                     </div>
+
+                    {/* TWITTER AND DISCORD */}
                     <div className="flex lg:flex-row flex-col gap-[10px] ">
                         <FormControl isInvalid={touched.twitter && !values.twitter}>
                             <Input 
@@ -94,7 +96,28 @@ export default function SyndicateForm(){
                         </FormControl>
                     </div>
                 </div>
-                <div className="lg:w-[22%]">
+                <div className="lg:col-start-4 col-span-2">
+                    <div className="flex lg:flex-row flex-col items-center gap-[10px]">
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.3693 19L2.62906e-08 2.63065L2.63065 0L19 16.3693L16.3693 19Z" fill="#FDFDFD"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19 2.63065L2.63065 19L0 16.3693L16.3693 5.82733e-07L19 2.63065Z" fill="#FDFDFD"/>
+                        </svg>
+                            <h3 className="uppercase mt-[5px]">Deadline</h3>
+                    </div>
+                    <FormControl  isInvalid={touched.deadline && !values.deadline}>
+                    <Input
+                        className="w-full pl-[20px] bg-transparent lg:text-left text-center" 
+                        type="date"
+                        name="deadline"
+                        value={values.deadline}
+                        onChange = {handleChange}
+                        onBlur = {onBlur}
+                        placeholder="Your deadline"
+                        />
+                        <FormErrorMessage>Required</FormErrorMessage>
+                    </FormControl>
+                </div>
+                <div className="lg:col-start-6 col-span-2">
                     <div className="flex lg:flex-row flex-col items-center gap-[10px]">
                         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M16.3693 19L2.62906e-08 2.63065L2.63065 0L19 16.3693L16.3693 19Z" fill="#FDFDFD"/>
@@ -115,13 +138,13 @@ export default function SyndicateForm(){
                     </FormControl>
                 </div>
             </div>
-            <div className="flex justify-center w-full">
+            <div className="flex justify-center w-full lg:grid lg:grid-cols-9 ">
                 <Button
-                    isDisabled={!values.twitter || !values.discord || !values.description}
+                    isDisabled={!values.twitter || !values.discord || !values.description || !values.deadline}
                     onClick={onSubmit}
                     isLoading={isLoading}
-                    className=" uppercase flex items-center justify-center mt-[40px] lg:w-[33%] w-full">
-                        <h3 className="py-[20px] border-[1px] border-white w-full">Submit</h3>
+                    className="uppercase mt-[40px] lg:mb-[60px] lg:col-span-5 lg:col-start-3 w-full ">
+                        <h3 className="w-full py-[20px] border-[1px] border-white">Submit</h3>
                 </Button>
             </div>
         </ChakraProvider>
