@@ -123,10 +123,6 @@ export default function StudioDesktop() {
                             alt={`Media ${index + 1}`}
                         />
                     )}
-                    <div className="mt-[20px]">
-                        <h3 className="uppercase text-center" style={{ opacity: index === hoveredIndex ? "1" : "0.3" }}>{item.title}</h3>
-                        <h3 className="text-[26px] uppercase text-center" style={{ opacity: index === hoveredIndex ? "1" : "0.3" }}>{item.artist}</h3>
-                    </div>
                 </div>
             ))}
         </div>
