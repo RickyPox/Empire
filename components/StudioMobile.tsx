@@ -40,6 +40,9 @@ export default function StudioDesktop() {
     const [gap, setGap] = useState<number>(0);
     const [marginBottom, setMarginBottom] = useState<number>(0);
     const videosRef = useRef<(HTMLVideoElement | null)[]>([]);
+    const [isMediaOpen, setIsMediaOpen] = useState(false)
+    const [selectedMedia, setSelectedMedia] = useState<string | null>(null)
+    const [selectedMediaType, setSelectedMediaType] = useState<string | undefined>()
 
     const defaultStyles = {
         border: "1px solid #FEFEFE",
@@ -98,6 +101,18 @@ export default function StudioDesktop() {
         }
     }, [hoveredIndex]);
 
+    const openModal = (index: any) => {
+        setIsMediaOpen(true)
+        setSelectedMedia(media[index].src);
+        setSelectedMediaType(media[index].type);
+    };
+
+    const closeModal = (index:any) => {
+        setIsMediaOpen(false);
+        setSelectedMedia(null);
+        setSelectedMediaType(undefined);
+    }
+
     return (
         <div className="flex flex-col justify-center items-center mt-[100px]"
         style={{ gap: gap, marginBottom: marginBottom }}>
@@ -108,6 +123,7 @@ export default function StudioDesktop() {
                 >
                     {item.type === "video" ? (
                         <video
+                            onClick={() => openModal(index)}
                             ref={el => videosRef.current[index] = el}
                             className="w-[260px] h-[260px] p-[20px]"
                             playsInline 
@@ -117,6 +133,7 @@ export default function StudioDesktop() {
                         </video>
                     ) : (
                         <img
+                            onClick={() => openModal(index)}
                             className="w-[260px] h-[260px] p-[20px]"
                             style={index === hoveredIndex ? hoverStyles : defaultStyles}
                             src={item.src}
@@ -125,6 +142,32 @@ export default function StudioDesktop() {
                     )}
                 </div>
             ))}
+
+            { isMediaOpen && <div className={`fixed bg-black/20 backdrop-blur-lg flex justify-center w-screen h-screen top-0 z-30`}>
+
+            <div className="w-full max-w-[1920px] relative">
+                <div className="p-[100px] flex justify-end" onClick={closeModal}>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L18.5 18.5" stroke="#FDFDFD" stroke-width="2"/>
+                        <path d="M18.5 1L0.999999 18.5" stroke="#FDFDFD" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div className="flex w-full absolute top-[50%] -translate-y-[50%] justify-center pointer-events-none">
+                {selectedMediaType === "video" ? (
+                    selectedMedia && (
+                    <video playsInline muted autoPlay loop className="max-h-[500px] px-[20px]">
+                        <source src={selectedMedia}></source>
+                    </video>
+                )
+            ) : (
+                selectedMedia && (
+                    <img src={selectedMedia} className="max-h-[500px] px-[20px]" alt="Selected Media" />
+                )
+            )}
+                    
+                </div>
+            </div>
+            </div>}
         </div>
     );
 }
