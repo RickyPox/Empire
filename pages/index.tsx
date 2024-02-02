@@ -7,7 +7,10 @@ import Head from "next/head";
 export default function Home() {
   return (
     <div className="max-w-[1920px]">
-      <Head><title>Empire</title></Head>
+      <Head>
+        <title>Empire</title>
+        <link rel="icon" sizes="16x16" href="/Logo.png" />
+        </Head>
       <section>
         <Navbar></Navbar>
       </section>

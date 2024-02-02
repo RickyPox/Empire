@@ -6,7 +6,10 @@ export default function DAO () {
     return(
         
         <div className="max-w-[1920px]">
-            <Head><title>Empire</title></Head>
+            <Head>
+                <title>Empire</title>
+                <link rel="icon" sizes="16x16" href="/Logo.png" />
+            </Head>
             <Navbar></Navbar>
             <section className="flex flex-col items-center justify-center w-screen mt-[50px] lg:mt-[150px]">
                 <div className="relative">

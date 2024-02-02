@@ -31,8 +31,8 @@ export default function Navbar() {
         setIsMenuOpen(!isMenuOpen)
     }
     return (
-        <div className={`${isMenuOpen ? "pt-[30px]": "pt-[0px]"} z-20`}>
-            <div className="flex lg:justify-evenly justify-between items-center px-[30px] lg:px-0  max-w-[1920px] w-screen lg:h-[150px] h-[50px] z-20">
+        <div className={`${isMenuOpen ? "pt-[30px]": "pt-[0px]"} z-20 lg:w-screen lg:flex justify-center`}>
+            <div className="flex lg:justify-evenly justify-between items-center px-[30px] lg:px-0 max-w-[1920px] w-screen lg:h-[150px] h-[50px] z-20">
                 <div>
                 <Link href="/"><img className="lg:w-auto w-[28px]" src="/Logo.png" alt="Logo" /></Link>
                 </div>

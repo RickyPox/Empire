@@ -11,6 +11,7 @@ export default function Studio() {
             <div className="max-w-[1920px]">
                 <Head>
                     <title>Empire</title>
+                    <link rel="icon" sizes="16x16" href="/Logo.png" />
                 </Head>
                 <Navbar></Navbar>
                 <section className="flex flex-col items-center justify-center mt-[50px] lg:mt-[150px]">
