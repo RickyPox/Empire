@@ -1,39 +1,6 @@
-import Navbar from "@/components/Navbar";
-import Head from "next/head";
 import { useRef, useState, useEffect } from "react";
+import {media} from "@/components/galleryArray"
 
-const media = [
-    {
-        src: "/studio/Image1.png",
-    },
-    {
-        src: "/studio/Image2.png",
-    },
-    {
-        src: "/studio/Image3.png",
-    },
-    {
-        src: "/studio/Image4.png",
-    },
-    {
-        src: "/studio/Image5.png",
-    },
-    {
-        src: "/studio/Image6.png",
-    },
-    {
-        src: "/studio/Video1.mp4",
-        type: "video",
-    },
-    {
-        src: "/studio/Video2.mp4",
-        type: "video",
-    },
-    {
-        src: "/studio/Video3.mp4",
-        type: "video",
-    },
-];
 
 export default function StudioDesktop() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -146,8 +113,8 @@ export default function StudioDesktop() {
             { isMediaOpen && <div className={`fixed bg-black/20 backdrop-blur-lg flex justify-center w-screen h-screen top-0 z-30`}>
 
             <div className="w-full max-w-[1920px] relative">
-                <div className="p-[100px] flex justify-end" onClick={closeModal}>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className="p-[100px] flex justify-end" >
+                    <svg onClick={closeModal} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L18.5 18.5" stroke="#FDFDFD" stroke-width="2"/>
                         <path d="M18.5 1L0.999999 18.5" stroke="#FDFDFD" stroke-width="2"/>
                     </svg>
